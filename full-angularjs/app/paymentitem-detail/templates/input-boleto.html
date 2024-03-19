@@ -1,0 +1,18 @@
+<input
+        name="{{paymentItemfield.id}}"
+        id="{{paymentItemfield.id}}"
+        placeholder="{{paymentItemfield.displayHints.placeholderLabel}}"
+        class="form-control"
+        ng-model="item[paymentItemfield.id]"
+        ng-attr-ui-mask="{{uimask(paymentItemfield)}}"
+        ng-attr-connect-validation="paymentItemfield.id"
+        ng-required="paymentItemfield.dataRestrictions.isRequired"
+        ui-options="maskoptions"
+        ui-mask-placeholder-char="space"
+        ui-mask-placeholder
+        ng-model-options="{ allowInvalid: true }"
+>
+<div class="error-length">Enter a valid length please</div>
+<div class="error-regexp">Please enter valid data</div>
+<div class="error-required">This field is required</div>
+<div class="error-boleto-bancario-requiredness">This is field is required</div>

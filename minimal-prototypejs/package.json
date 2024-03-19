@@ -1,0 +1,12 @@
+{
+  "name": "connect-sdk-client-js-example-prototypejs",
+  "version": "1.14.0",
+  "description": "",
+  "private": true,
+  "main": "index.html",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-sdk-client-js": "^4.0.1"
+  }
+}

@@ -1,0 +1,113 @@
+<div class="demo" ng-controller="sessiondetails.controller">
+    <p>
+        To process the payment using the services provided by Worldline Global Collect, the following information must be provided as a merchant
+    </p>
+    <p>
+        After providing the information requested below, this example can process a payment.
+    </p>
+    <div class="paymentoption par">
+        <form ng-submit="startPayment()" method="POST" name="session-details-form">
+            <div class="form-group">
+                <label for="assetUrl" class="hidden-xs hidden-sm">Asset URL</label>
+                <div>
+                    <input name="assetUrl" type="text" id="assetUrl" class="form-control" ng-model="input.assetUrl" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="clientApiUrl" class="hidden-xs hidden-sm">Client Api URL</label>
+                <div>
+                    <input name="clientApiUrl" type="text" id="clientApiUrl" class="form-control" ng-model="input.clientApiUrl" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="clientSessionId" class="hidden-xs hidden-sm">Client Session Id</label>
+                <div>
+                    <input name="clientSessionId" type="text" id="clientSessionId" class="form-control" ng-model="input.clientSessionId" required>
+                    <p class="error">This field is required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="customerId" class="hidden-xs hidden-sm">Customer Id</label>
+                <div>
+                    <input name="customerId" type="text" id="customerId" class="form-control" ng-model="input.customerId" required>
+                    <p class="error">This field is required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="amountInCents" class="hidden-xs hidden-sm">Amount (in cents)</label>
+                <div>
+                    <input name="amountInCents" type="number" step="1" id="amountInCents" class="form-control" ng-model="input.amountInCents">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="countryCode" class="hidden-xs hidden-sm">Country Code</label>
+                <div>
+                    <input name="countryCode" type="text" id="countryCode" class="form-control" ng-model="input.countryCode">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="currency" class="hidden-xs hidden-sm">Currency Code</label>
+                <div>
+                    <input name="currencyCode" type="text" id="currencyCode" class="form-control" ng-model="input.currencyCode">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="locale" class="hidden-xs hidden-sm">Locale</label>
+                <div>
+                    <select name="locale" id="locale" class="form-control" ng-model="input.locale">
+                                                    <!-- These are not all possible locales. You can find them all in the Worldline Connect Configuration Center -->
+                                                    <option value="ar_DZ">Arabic (ar_DZ)</option>
+                                                    <option value="zh_TW">Chinese (zh_TW)</option>
+                                                    <option value="da_DK">Danish (da_DK)</option>
+                                                    <option value="nl_BE">Dutch (nl_BE)</option>
+                                                    <option value="nl_NL">Dutch (nl_NL)</option>
+                                                    <option value="en_MT">English (en_MT)</option>
+                                                    <option value="en_GB" selected>English (en_GB)</option>
+                                                    <option value="fi_FI">Finnish (fi_FI)</option>
+                                                    <option value="fr_CH">French (fr_CH)</option>
+                                                    <option value="fr_BE">French (fr_BE)</option>
+                                                    <option value="de_DE">German (de_DE)</option>
+                                                    <option value="el_CY">Greek (el_CY)</option>
+                                                    <option value="in_ID">Indonesian (in_ID)</option>
+                                                    <option value="mk_MK">Macedonian (mk_MK)</option>
+                                                </select>
+                </div>
+            </div>
+            <div class="checkbox">
+                <label for="isRecurring" class="hidden-xs hidden-sm">
+                                                <input type="checkbox" id="isRecurring"  ng-model="input.isRecurring">
+                                                <span>Recurring payment</span> </label>
+            </div>
+            <div class="checkbox">
+                <label for="grouping" class="hidden-xs hidden-sm">
+                                                <input type="checkbox" id="grouping"  ng-model="input.grouping">
+                                                <span>Group products</span> </label>
+            </div>
+            <br /><br />
+            <strong>Google Pay additional input fields:</strong>
+            <div class="form-group">
+                <label for="gatewayMerchantId" class="">Connect Merchant ID (required for Google Pay)</label>
+                <div>
+                    <input name="gatewayMerchantId" type="text" id="gatewayMerchantId" ng-model="input.gatewayMerchantId" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="merchantId" class="">Google Pay Merchant ID (required for Google Pay)</label>
+                <div>
+                    <input name="merchantId" type="text" id="merchantId" ng-model="input.merchantId" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="merchantName" class="">Merchant Name (optional for prefetching)</label>
+                <div>
+                    <input name="merchantName" type="text" id="merchantName" ng-model="input.merchantName" class="form-control">
+                </div>
+            </div>
+            <div class="paymentbuttons" id="paymentButtons">
+                <button class="btn btn-success btn-block btn-primary" type="submit" id="startPayment">
+                                                <span>Start secure payment</span>
+                                            </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{
+  "name": "connect-sdk-client-js-example-browserify",
+  "version": "1.14.0",
+  "description": "",
+  "private": true,
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "lite": "lite-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^13.1.0",
+    "connect-sdk-client-js": "^4.0.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  }
+}
