@@ -1,0 +1,5119 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/context.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "context"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "context",
+          "declaration": {
+            "name": "context",
+            "module": "src/context.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/controllers/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./session-controller"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/controllers/session-controller.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Session Reactive Controller",
+          "name": "SessionController",
+          "members": [
+            {
+              "kind": "field",
+              "name": "host",
+              "type": {
+                "text": "Host"
+              },
+              "default": "host"
+            },
+            {
+              "kind": "field",
+              "name": "_session",
+              "type": {
+                "text": "Session"
+              },
+              "privacy": "private",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "_paymentProduct",
+              "type": {
+                "text": "PaymentProduct"
+              },
+              "privacy": "private",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "_sessionDetails",
+              "type": {
+                "text": "SessionDetails | undefined"
+              },
+              "privacy": "private",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "_context",
+              "type": {
+                "text": "Context | undefined"
+              },
+              "privacy": "private",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "_paymentProductUpdateListeners",
+              "type": {
+                "text": "Array<\n    (paymentProduct: PaymentProduct) => void\n  >"
+              },
+              "privacy": "private",
+              "static": true,
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "context",
+              "type": {
+                "text": "Context | undefined"
+              },
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "session",
+              "type": {
+                "text": "Session | undefined"
+              },
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "paymentDetails",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "paymentProductSpecificInputs",
+              "type": {
+                "text": "PaymentProductSpecificInputs"
+              },
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "groupPaymentProducts",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "clearSession",
+              "description": "Clear data from context (session) and session storage\nand redirect to the view details form"
+            },
+            {
+              "kind": "method",
+              "name": "setPaymentProduct",
+              "parameters": [
+                {
+                  "name": "paymentProduct",
+                  "type": {
+                    "text": "PaymentProduct"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "subscribeToPaymentProductUpdate",
+              "parameters": [
+                {
+                  "name": "fn",
+                  "type": {
+                    "text": "(paymentProduct: PaymentProduct) => void"
+                  },
+                  "description": "Function called with the updated payment product"
+                }
+              ],
+              "description": "Subscribe to payment product update",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "encryptPaymentRequest",
+              "parameters": [
+                {
+                  "name": "data",
+                  "type": {
+                    "text": "Record<string, string>"
+                  },
+                  "description": "Payment data which will be added to the PaymentRequest"
+                },
+                {
+                  "name": "remember",
+                  "default": "false",
+                  "type": {
+                    "text": "boolean"
+                  },
+                  "description": "Remember the payment data"
+                }
+              ],
+              "description": "Add data to payment request and encrypt the payment request",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SessionController",
+          "declaration": {
+            "name": "SessionController",
+            "module": "src/controllers/session-controller.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./views"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./ui"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./icons"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./payment-product-fields"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/routes/index.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "RouteViewComponentName",
+          "type": {
+            "text": "{\n  Details: 'wl-view-details',\n  PaymentMethodSelection: 'wl-view-products',\n  PaymentProductDetail: 'wl-view-product',\n  PaymentProductGroupDetail: 'wl-view-group',\n  EncryptedPayload: 'wl-view-encrypted-payload',\n}"
+          },
+          "default": "{ Details: 'wl-view-details', PaymentMethodSelection: 'wl-view-products', PaymentProductDetail: 'wl-view-product', PaymentProductGroupDetail: 'wl-view-group', EncryptedPayload: 'wl-view-encrypted-payload', }"
+        },
+        {
+          "kind": "function",
+          "name": "getViewComponentPath",
+          "parameters": [
+            {
+              "name": "componentName",
+              "type": {
+                "text": "RouteViewComponentName"
+              },
+              "description": "View Component name"
+            },
+            {
+              "name": "params",
+              "optional": true,
+              "type": {
+                "text": "Record<string, string>"
+              },
+              "description": "Route parameters"
+            }
+          ],
+          "description": "Get the path by view component name"
+        },
+        {
+          "kind": "function",
+          "name": "navigateToView",
+          "return": {
+            "type": {
+              "text": "boolean"
+            }
+          },
+          "parameters": [
+            {
+              "name": "componentName",
+              "type": {
+                "text": "RouteViewComponentName"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "navigateToView",
+          "return": {
+            "type": {
+              "text": "boolean"
+            }
+          },
+          "parameters": [
+            {
+              "name": "componentName",
+              "type": {
+                "text": "RouteViewComponentName"
+              }
+            },
+            {
+              "name": "params",
+              "optional": true,
+              "type": {
+                "text": "Record<string, string>"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "navigateToView",
+          "parameters": [
+            {
+              "name": "componentName",
+              "type": {
+                "text": "RouteViewComponentName"
+              },
+              "description": "View Component name"
+            },
+            {
+              "name": "params",
+              "optional": true,
+              "type": {
+                "text": "Record<string, string>"
+              },
+              "description": "Route parameters"
+            }
+          ],
+          "description": "Navigate to component view"
+        },
+        {
+          "kind": "variable",
+          "name": "routes",
+          "type": {
+            "text": "Route[]"
+          },
+          "description": "Return \"@vaadin routes\" for all view components"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RouteViewComponentName",
+          "declaration": {
+            "name": "RouteViewComponentName",
+            "module": "src/routes/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getViewComponentPath",
+          "declaration": {
+            "name": "getViewComponentPath",
+            "module": "src/routes/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "navigateToView",
+          "declaration": {
+            "name": "navigateToView",
+            "module": "src/routes/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "navigateToView",
+          "declaration": {
+            "name": "navigateToView",
+            "module": "src/routes/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "navigateToView",
+          "declaration": {
+            "name": "navigateToView",
+            "module": "src/routes/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "routes",
+          "declaration": {
+            "name": "routes",
+            "module": "src/routes/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/mixins/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./tailwind-mixin"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-view-mixin"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-field-mixin"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/mixins/tailwind-mixin.ts",
+      "declarations": [
+        {
+          "kind": "mixin",
+          "description": "This mixin adds tailwind styles to the shadow root",
+          "name": "TailwindMixin",
+          "members": [
+            {
+              "kind": "field",
+              "name": "styles",
+              "type": {
+                "text": "CSSResultArray"
+              },
+              "static": true,
+              "default": "[tailwindStyle]"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "superclass",
+              "type": {
+                "text": "T"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "variable",
+          "name": "TailwindElement"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TailwindMixin",
+          "declaration": {
+            "name": "TailwindMixin",
+            "module": "src/mixins/tailwind-mixin.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TailwindElement",
+          "declaration": {
+            "name": "TailwindElement",
+            "module": "src/mixins/tailwind-mixin.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/mixins/wl-field-mixin.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "validationMessages",
+          "default": "new Map< ValidationRuleType | 'required' | string, (data: { rule: ValidationRule; value: string }) => string >([ ['emailAddress', () => 'Please enter a valid email address'], ['expirationDate', () => 'Please enter a valid expiration date'], ['iban', () => 'Please enter valid iban'], ['luhn', () => 'Please enter a valid credit card number'], ['required', () => 'This field is required'], ['regularExpression', () => 'Please enter valid data'], [ 'length', ({ rule }) => { const attributes = rule.json.attributes; if (!attributes || typeof attributes !== 'object') { return 'Invalid length'; } const minLength = 'minLength' in attributes ? attributes.minLength : null; const maxLength = 'maxLength' in attributes ? attributes.maxLength : null; return minLength === maxLength ? `Please enter a value of length ${minLength}` : `Please enter a valid length between ${minLength} and ${maxLength}`; }, ], ])"
+        },
+        {
+          "kind": "mixin",
+          "description": "This mixin binds the PaymentProductField data to form field\nand can be used to wrap a payment-product-field element",
+          "name": "WlFieldMixin",
+          "members": [
+            {
+              "kind": "field",
+              "name": "additionalInputProps",
+              "type": {
+                "text": "AdditionalInputProps | undefined"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "autofocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "autofocus",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "readonly",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "loading",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "inputMode",
+              "type": {
+                "text": "string"
+              },
+              "default": "'text'",
+              "attribute": "inputmode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "paymentProductField",
+              "type": {
+                "text": "PaymentProductField"
+              },
+              "attribute": "field-data"
+            },
+            {
+              "kind": "field",
+              "name": "fieldId",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "field-id",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "renderIcon",
+              "privacy": "protected",
+              "description": "Render icon based on fieldData"
+            },
+            {
+              "kind": "method",
+              "name": "renderTooltip",
+              "privacy": "protected",
+              "description": "Render tooltip based on displayHints from fieldData"
+            },
+            {
+              "kind": "method",
+              "name": "applyMask",
+              "parameters": [
+                {
+                  "name": "{ _input: input }",
+                  "type": {
+                    "text": "WlInput"
+                  }
+                }
+              ],
+              "description": "Apply mask to the input field"
+            },
+            {
+              "kind": "method",
+              "name": "validate",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "input",
+                  "type": {
+                    "text": "WlInput"
+                  }
+                }
+              ],
+              "description": "Validate the unmasked input value against all validation rules"
+            },
+            {
+              "kind": "method",
+              "name": "onChangeInput",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Event handler used when a WlInput Input element\nchanges value, example:\n\n```html\n<wl-input"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "value"
+            },
+            {
+              "name": "autofocus",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "autofocus"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "readonly"
+            },
+            {
+              "name": "loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "loading"
+            },
+            {
+              "name": "inputmode",
+              "type": {
+                "text": "string"
+              },
+              "default": "'text'",
+              "fieldName": "inputMode"
+            },
+            {
+              "name": "field-data",
+              "type": {
+                "text": "PaymentProductField"
+              },
+              "fieldName": "paymentProductField"
+            },
+            {
+              "name": "field-id",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "fieldId"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "superClass",
+              "type": {
+                "text": "T"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "variable",
+          "name": "WlFieldElement"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "validationMessages",
+          "declaration": {
+            "name": "validationMessages",
+            "module": "src/mixins/wl-field-mixin.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WlFieldMixin",
+          "declaration": {
+            "name": "WlFieldMixin",
+            "module": "src/mixins/wl-field-mixin.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WlFieldElement",
+          "declaration": {
+            "name": "WlFieldElement",
+            "module": "src/mixins/wl-field-mixin.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/mixins/wl-view-mixin.ts",
+      "declarations": [
+        {
+          "kind": "mixin",
+          "description": "This mixin is used to redirect to `wl-view-details`\nwhen session is not set",
+          "name": "WlViewMixin",
+          "members": [
+            {
+              "kind": "field",
+              "name": "sessionController",
+              "privacy": "protected",
+              "default": "new SessionController(this)"
+            },
+            {
+              "kind": "method",
+              "name": "afterContextProviderReady",
+              "privacy": "protected",
+              "description": "Custom lifecycle\nThis method is called after the first update is rendered\nwhich allows consuming data from the context provider"
+            },
+            {
+              "kind": "method",
+              "name": "onAfterEnter",
+              "description": "Lifecycle provided by"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "superClass",
+              "type": {
+                "text": "T"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlViewMixin",
+          "declaration": {
+            "name": "WlViewMixin",
+            "module": "src/mixins/wl-view-mixin.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/utils/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./load-script"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/utils/load-script.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "loadScript",
+          "parameters": [
+            {
+              "name": "url",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "description": "Load a script from a URL asynchronously\nand insert the script into the document head."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "loadScript",
+          "declaration": {
+            "name": "loadScript",
+            "module": "src/utils/load-script.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/icons/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-icon-card"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-icon-calendar"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-icon-lock"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-icon-user"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-icon-check"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/icons/wl-icon-calendar.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlIconCalendar",
+          "members": [],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-icon-calendar",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlIconCalendar",
+          "declaration": {
+            "name": "WlIconCalendar",
+            "module": "src/elements/icons/wl-icon-calendar.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-icon-calendar",
+          "declaration": {
+            "name": "WlIconCalendar",
+            "module": "src/elements/icons/wl-icon-calendar.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/icons/wl-icon-card.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlIconCard",
+          "members": [],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-icon-card",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlIconCard",
+          "declaration": {
+            "name": "WlIconCard",
+            "module": "src/elements/icons/wl-icon-card.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-icon-card",
+          "declaration": {
+            "name": "WlIconCard",
+            "module": "src/elements/icons/wl-icon-card.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/icons/wl-icon-check.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlIconCheck",
+          "members": [],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-icon-check",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlIconCheck",
+          "declaration": {
+            "name": "WlIconCheck",
+            "module": "src/elements/icons/wl-icon-check.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-icon-check",
+          "declaration": {
+            "name": "WlIconCheck",
+            "module": "src/elements/icons/wl-icon-check.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/icons/wl-icon-lock.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlIconLock",
+          "members": [],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-icon-lock",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlIconLock",
+          "declaration": {
+            "name": "WlIconLock",
+            "module": "src/elements/icons/wl-icon-lock.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-icon-lock",
+          "declaration": {
+            "name": "WlIconLock",
+            "module": "src/elements/icons/wl-icon-lock.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/icons/wl-icon-user.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlIconUser",
+          "members": [],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-icon-user",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlIconUser",
+          "declaration": {
+            "name": "WlIconUser",
+            "module": "src/elements/icons/wl-icon-user.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-icon-user",
+          "declaration": {
+            "name": "WlIconUser",
+            "module": "src/elements/icons/wl-icon-user.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/payment-product-fields/index.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "fieldMap",
+          "default": "new Map([ ['cardNumber', WlPaymentProductFieldCardNumber], ]) satisfies Map<string, typeof WlFieldElement>"
+        },
+        {
+          "kind": "variable",
+          "name": "DefaultField",
+          "default": "WlPaymentProductFieldDefaultInput"
+        },
+        {
+          "kind": "variable",
+          "name": "iconMap",
+          "default": "new Map([ ['cardNumber', WlIconCard], ['expiryDate', WlIconCalendar], ['cvv', WlIconLock], ['cardholderName', WlIconUser], ]) satisfies Map<string, typeof TailwindElement>"
+        },
+        {
+          "kind": "variable",
+          "name": "additionalPropsMap",
+          "default": "new Map([ ['cardNumber', { autocomplete: 'cc-number' }], ['expiryDate', { autocomplete: 'cc-exp' }], ['cvv', { autocomplete: 'cc-csc' }], ['cardholderName', { autocomplete: 'cc-name' }], ]) satisfies Map<string, AdditionalInputProps>"
+        },
+        {
+          "kind": "function",
+          "name": "renderPaymentProductFields",
+          "return": {
+            "type": {
+              "text": "PaymentProductFieldElement[]"
+            }
+          },
+          "parameters": [
+            {
+              "name": "fields",
+              "type": {
+                "text": "PaymentProductField[]"
+              }
+            }
+          ],
+          "description": "Render payment product paymentProductFields"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-payment-product-field-default-input"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-payment-product-field-card-number"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "fieldMap",
+          "declaration": {
+            "name": "fieldMap",
+            "module": "src/elements/payment-product-fields/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "DefaultField",
+          "declaration": {
+            "name": "DefaultField",
+            "module": "src/elements/payment-product-fields/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "iconMap",
+          "declaration": {
+            "name": "iconMap",
+            "module": "src/elements/payment-product-fields/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "additionalPropsMap",
+          "declaration": {
+            "name": "additionalPropsMap",
+            "module": "src/elements/payment-product-fields/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "renderPaymentProductFields",
+          "declaration": {
+            "name": "renderPaymentProductFields",
+            "module": "src/elements/payment-product-fields/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/payment-product-fields/wl-payment-product-field-card-number.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "The `WlFieldCardNumber` component\nis an exception to the default input field\nas it requires additional logic to determine\nthe supported payment items",
+          "name": "WlPaymentProductFieldCardNumber",
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "_paymentProduct",
+              "type": {
+                "text": "PaymentProduct | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_coBrandPaymentProducts",
+              "type": {
+                "text": "PaymentProduct[]"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "_input",
+              "type": {
+                "text": "WlInput"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#sessionController",
+              "privacy": "private",
+              "default": "new SessionController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "#unsubscribePaymentProductUpdate",
+              "privacy": "private",
+              "type": {
+                "text": "ReturnType<\n    SessionController['subscribeToPaymentProductUpdate']\n  > | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#updateSupportedPaymentItemsTask",
+              "privacy": "private",
+              "default": "new Task(this, { args: () => [this.value], onError: (error) => { if (error instanceof ResponseError && error.status === 403) { return this.#sessionController.clearSession(); } // the validation rules will already define the validity of the input // if the validation rules succeeded, but this error occurred, // we need to set the validity to `invalid creditcard number` if (this._input.validity.valid) { this._input.setCustomValidity('Invalid creditcard number'); } // reset this._paymentProduct = undefined; if (this._coBrandPaymentProducts.length) { this._coBrandPaymentProducts = []; } // to prevent spamming console errors, we omit messages from the `getIinDetails` call const omitConsoleError = error instanceof IinDetailsResponseError || (error instanceof ResponseError && error.status === 404); if (!omitConsoleError) console.error(error); }, task: async ([value]) => { // prevent calling iin details when field is not interactive if (this.disabled || this.readonly) return; const { session, paymentDetails } = this.#sessionController; if (!(session && paymentDetails && value)) return; // get iin details const iinDetails = await session.getIinDetails(value, paymentDetails); // if the card is not supported, we need to set the validity of the input if (iinDetails.status !== IinDetailsStatus.SUPPORTED) { this._coBrandPaymentProducts = []; if (this._input.validity.valid) { this._input.setCustomValidity('This creditcard is not supported'); } return; } // if the card is supported, we need to fetch the main payment item // @note: this payment product will be added to the payment request // in the lifecycle WlFieldCardNumber.willUpdate this._paymentProduct = await session.getPaymentProduct( iinDetails.paymentProductId, paymentDetails, ); if (!iinDetails.coBrands) { this._coBrandPaymentProducts = []; return; } // set co-brand payment products this._coBrandPaymentProducts = await Promise.all( iinDetails.coBrands .filter((json) => json.isAllowedInContext) .map((json) => session.getPaymentProduct(json.paymentProductId, paymentDetails), ), ); }, })"
+            },
+            {
+              "kind": "method",
+              "name": "_onPaymentProductChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Callback handler\nSet the payment product to the selected co-brand payment product"
+            },
+            {
+              "kind": "method",
+              "name": "#renderCoBrandDropdownOption",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "product",
+                  "type": {
+                    "text": "PaymentProduct"
+                  }
+                }
+              ],
+              "description": "Render a single dropdown option of a co-brand payment product"
+            }
+          ],
+          "superclass": {
+            "name": "WlFieldElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-payment-product-field-card-number",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlPaymentProductFieldCardNumber",
+          "declaration": {
+            "name": "WlPaymentProductFieldCardNumber",
+            "module": "src/elements/payment-product-fields/wl-payment-product-field-card-number.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-payment-product-field-card-number",
+          "declaration": {
+            "name": "WlPaymentProductFieldCardNumber",
+            "module": "src/elements/payment-product-fields/wl-payment-product-field-card-number.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/payment-product-fields/wl-payment-product-field-default-input.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Default input for payment product field\nConnects PaymentProductField to the input field",
+          "name": "WlPaymentProductFieldDefaultInput",
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            }
+          ],
+          "superclass": {
+            "name": "WlFieldElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-payment-product-field-default-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlPaymentProductFieldDefaultInput",
+          "declaration": {
+            "name": "WlPaymentProductFieldDefaultInput",
+            "module": "src/elements/payment-product-fields/wl-payment-product-field-default-input.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-payment-product-field-default-input",
+          "declaration": {
+            "name": "WlPaymentProductFieldDefaultInput",
+            "module": "src/elements/payment-product-fields/wl-payment-product-field-default-input.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-alert"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-button"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-data-field"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-dialog-confirm"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-dialog-info"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-dropdown"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-form-field"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-info-tooltip"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-input"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-loading-spinner"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-link"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-dialog-encrypted-payload"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-disclosure"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-copy-button"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-alert.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "AlertSeverity",
+          "type": {
+            "text": "{\n  INFO: 'info',\n  WARNING: 'warning',\n  ERROR: 'error',\n}"
+          },
+          "default": "{ INFO: 'info', WARNING: 'warning', ERROR: 'error', }"
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlAlert",
+          "members": [
+            {
+              "kind": "field",
+              "name": "severity",
+              "attribute": "severity",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "severity",
+              "fieldName": "severity"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-alert",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AlertSeverity",
+          "declaration": {
+            "name": "AlertSeverity",
+            "module": "src/elements/ui/wl-alert.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WlAlert",
+          "declaration": {
+            "name": "WlAlert",
+            "module": "src/elements/ui/wl-alert.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-alert",
+          "declaration": {
+            "name": "WlAlert",
+            "module": "src/elements/ui/wl-alert.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-button.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "buttonVariantClasses",
+          "default": "new Map<ButtonVariant, string>([ [ 'primary', 'bg-green-600 hover:bg-green-500 focus:bg-green-500 text-white focus-visible:outline-green-600', ], [ 'secondary', 'bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 focus-visible:outline-gray-600', ], ])"
+        },
+        {
+          "kind": "variable",
+          "name": "buttonSizeMap",
+          "default": "new Map<ButtonSize, string>([ ['xs', 'text-sm py-1.5'], ['md', 'py-2'], ['xl', 'text-lg py-2.5'], ])"
+        },
+        {
+          "kind": "function",
+          "name": "getButtonClassName",
+          "parameters": [
+            {
+              "name": "{\n  disabled = false,\n  variant = 'primary',\n  size = 'md',\n}",
+              "default": "{}",
+              "type": {
+                "text": "{\n  disabled?: boolean;\n  size?: ButtonSize;\n  variant?: ButtonVariant;\n}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "variable",
+          "name": "buttonDisabledClass",
+          "type": {
+            "text": "string"
+          },
+          "default": "'bg-gray-200 transition-colors cursor-not-allowed hover:bg-gray-200 text-gray-400'"
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#internals",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "shadowRootOptions",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ ...LitElement.shadowRootOptions, delegatesFocus: true, }"
+            },
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "ButtonVariant"
+              },
+              "default": "'primary'",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "HTMLButtonElement['type']"
+              },
+              "default": "'submit'",
+              "attribute": "type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "loading",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "ButtonSize"
+              },
+              "default": "'md'",
+              "attribute": "size",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "class",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "class",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "#onClick",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "ButtonVariant"
+              },
+              "default": "'primary'",
+              "fieldName": "variant"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "HTMLButtonElement['type']"
+              },
+              "default": "'submit'",
+              "fieldName": "type"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "loading"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "ButtonSize"
+              },
+              "default": "'md'",
+              "fieldName": "size"
+            },
+            {
+              "name": "class",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "class"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "buttonVariantClasses",
+          "declaration": {
+            "name": "buttonVariantClasses",
+            "module": "src/elements/ui/wl-button.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "buttonSizeMap",
+          "declaration": {
+            "name": "buttonSizeMap",
+            "module": "src/elements/ui/wl-button.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getButtonClassName",
+          "declaration": {
+            "name": "getButtonClassName",
+            "module": "src/elements/ui/wl-button.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "buttonDisabledClass",
+          "declaration": {
+            "name": "buttonDisabledClass",
+            "module": "src/elements/ui/wl-button.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WlButton",
+          "declaration": {
+            "name": "WlButton",
+            "module": "src/elements/ui/wl-button.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-button",
+          "declaration": {
+            "name": "WlButton",
+            "module": "src/elements/ui/wl-button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-copy-button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A button that copies the value to the clipboard",
+          "name": "WlCopyButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#submitTimeout",
+              "privacy": "private",
+              "type": {
+                "text": "ReturnType<typeof setTimeout> | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "timeout",
+              "type": {
+                "text": "number"
+              },
+              "default": "2_000",
+              "attribute": "timeout",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_copied",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "#dispatchEvent",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "key",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "data",
+                  "optional": true,
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#onClick",
+              "privacy": "private"
+            }
+          ],
+          "events": [
+            {
+              "name": "key",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "value"
+            },
+            {
+              "name": "timeout",
+              "type": {
+                "text": "number"
+              },
+              "default": "2_000",
+              "fieldName": "timeout"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-copy-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlCopyButton",
+          "declaration": {
+            "name": "WlCopyButton",
+            "module": "src/elements/ui/wl-copy-button.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-copy-button",
+          "declaration": {
+            "name": "WlCopyButton",
+            "module": "src/elements/ui/wl-copy-button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-data-field.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Renders a form field based on the provided data",
+          "name": "WlDataField",
+          "members": [
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "Field"
+              },
+              "attribute": "data"
+            },
+            {
+              "kind": "field",
+              "name": "radioGroupValue",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "_checkboxChecked",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "#renderInput",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "data",
+                  "type": {
+                    "text": "Input"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#renderSelect",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "{\n    name,\n    disabled,\n    required,\n    selected,\n    autofocus,\n    autocomplete,\n    options = [],\n  }",
+                  "type": {
+                    "text": "Select"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#renderCheckbox",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "{\n    name,\n    label,\n    autofocus,\n    description,\n    fields,\n    alert,\n  }",
+                  "type": {
+                    "text": "Checkbox"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#renderRadioGroup",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "data",
+                  "type": {
+                    "text": "RadioGroup"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#renderField",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "field",
+                  "type": {
+                    "text": "Field"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "name": "data",
+              "type": {
+                "text": "Field"
+              },
+              "fieldName": "data"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-data-field",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlDataField",
+          "declaration": {
+            "name": "WlDataField",
+            "module": "src/elements/ui/wl-data-field.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-data-field",
+          "declaration": {
+            "name": "WlDataField",
+            "module": "src/elements/ui/wl-data-field.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-dialog-confirm.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlDialogConfirm",
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "shadowRootOptions",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ ...LitElement.shadowRootOptions, delegatesFocus: true, }"
+            },
+            {
+              "kind": "field",
+              "name": "cancelText",
+              "type": {
+                "text": "string"
+              },
+              "default": "'cancel'",
+              "attribute": "cancel-text"
+            },
+            {
+              "kind": "field",
+              "name": "submitLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Submit'",
+              "attribute": "submit-label"
+            },
+            {
+              "kind": "field",
+              "name": "dialogTitle",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "dialog-title"
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "DialogSize"
+              },
+              "default": "'normal'",
+              "attribute": "size"
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_dialog",
+              "type": {
+                "text": "HTMLDialogElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_form",
+              "type": {
+                "text": "HTMLFormElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_slotContent",
+              "type": {
+                "text": "HTMLSlotElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "showModal"
+            },
+            {
+              "kind": "method",
+              "name": "close"
+            },
+            {
+              "kind": "method",
+              "name": "getFormElement"
+            },
+            {
+              "kind": "method",
+              "name": "#onSubmit",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "name": "submit",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "cancel-text",
+              "type": {
+                "text": "string"
+              },
+              "default": "'cancel'",
+              "fieldName": "cancelText"
+            },
+            {
+              "name": "submit-label",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Submit'",
+              "fieldName": "submitLabel"
+            },
+            {
+              "name": "dialog-title",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "dialogTitle"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "DialogSize"
+              },
+              "default": "'normal'",
+              "fieldName": "size"
+            },
+            {
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "open"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-dialog-confirm",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlDialogConfirm",
+          "declaration": {
+            "name": "WlDialogConfirm",
+            "module": "src/elements/ui/wl-dialog-confirm.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-dialog-confirm",
+          "declaration": {
+            "name": "WlDialogConfirm",
+            "module": "src/elements/ui/wl-dialog-confirm.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-dialog-encrypted-payload.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "This component will render a dialog with the encrypted payload\nand functionality to copy the encrypted payload to the clipboard",
+          "name": "WlDialogEncryptedPayload",
+          "members": [
+            {
+              "kind": "field",
+              "name": "encryptedPayload",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "encryptedPayload"
+            },
+            {
+              "kind": "field",
+              "name": "_dialog",
+              "type": {
+                "text": "WlDialogConfirm"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#selectPayloadText",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "encryptedPayload",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "encryptedPayload"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-dialog-encrypted-payload",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlDialogEncryptedPayload",
+          "declaration": {
+            "name": "WlDialogEncryptedPayload",
+            "module": "src/elements/ui/wl-dialog-encrypted-payload.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-dialog-encrypted-payload",
+          "declaration": {
+            "name": "WlDialogEncryptedPayload",
+            "module": "src/elements/ui/wl-dialog-encrypted-payload.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-dialog-info.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlDialogInfo",
+          "members": [
+            {
+              "kind": "field",
+              "name": "shadowRootOptions",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ ...LitElement.shadowRootOptions, delegatesFocus: true, }"
+            },
+            {
+              "kind": "field",
+              "name": "dialogTitle",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "dialog-title"
+            },
+            {
+              "kind": "field",
+              "name": "closeClickOutside",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "attribute": "closeClickOutside"
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "DialogSize"
+              },
+              "default": "'normal'",
+              "attribute": "size"
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_dialog",
+              "type": {
+                "text": "HTMLDialogElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "showModal"
+            },
+            {
+              "kind": "method",
+              "name": "close"
+            },
+            {
+              "kind": "field",
+              "name": "#onCloseDialog",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#onClickDialog",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "dialog-title",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "dialogTitle"
+            },
+            {
+              "name": "closeClickOutside",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "fieldName": "closeClickOutside"
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "DialogSize"
+              },
+              "default": "'normal'",
+              "fieldName": "size"
+            },
+            {
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "open"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-dialog-info",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlDialogInfo",
+          "declaration": {
+            "name": "WlDialogInfo",
+            "module": "src/elements/ui/wl-dialog-info.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-dialog-info",
+          "declaration": {
+            "name": "WlDialogInfo",
+            "module": "src/elements/ui/wl-dialog-info.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-disclosure.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlDisclosure",
+          "members": [
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "open",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_openTransitionEnded",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_container",
+              "type": {
+                "text": "HTMLDivElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#onTransitionStart",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#onTransitionEnd",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "open"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-disclosure",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlDisclosure",
+          "declaration": {
+            "name": "WlDisclosure",
+            "module": "src/elements/ui/wl-disclosure.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-disclosure",
+          "declaration": {
+            "name": "WlDisclosure",
+            "module": "src/elements/ui/wl-disclosure.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-dropdown.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "DropdownPlacement",
+          "type": {
+            "text": "{\n  Left: 'left',\n  Right: 'right',\n}"
+          },
+          "default": "{ Left: 'left', Right: 'right', }"
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlDropdown",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#textLabel",
+              "privacy": "private",
+              "type": {
+                "text": "string | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_isExpanded",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled"
+            },
+            {
+              "kind": "field",
+              "name": "_assignedNodes",
+              "type": {
+                "text": "Node[] | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_assignedNodesButtonLabel",
+              "type": {
+                "text": "Node[] | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#onKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ],
+              "description": "Close menu when pressing the escape key"
+            },
+            {
+              "kind": "field",
+              "name": "#onFocusIn",
+              "privacy": "private",
+              "description": "Update isExpanded state when focus is inside the dropdown"
+            },
+            {
+              "kind": "field",
+              "name": "#onFocusOut",
+              "privacy": "private",
+              "description": "Update isExpanded state when focus is outside the dropdown"
+            },
+            {
+              "kind": "method",
+              "name": "_onChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onSlotChange",
+              "privacy": "private",
+              "description": "Set selected option and value"
+            },
+            {
+              "kind": "method",
+              "name": "#updateButtonLabel",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_onSlotChangeButtonLabel",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-dropdown",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlDropdownOption",
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "shadowRootOptions",
+              "type": {
+                "text": "ShadowRootInit"
+              },
+              "static": true,
+              "default": "{ ...LitElement.shadowRootOptions, delegatesFocus: true, }"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "selected",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "#dispatchValue",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#onKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "value"
+            },
+            {
+              "name": "selected",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "selected"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-dropdown-option",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DropdownPlacement",
+          "declaration": {
+            "name": "DropdownPlacement",
+            "module": "src/elements/ui/wl-dropdown.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WlDropdown",
+          "declaration": {
+            "name": "WlDropdown",
+            "module": "src/elements/ui/wl-dropdown.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-dropdown",
+          "declaration": {
+            "name": "WlDropdown",
+            "module": "src/elements/ui/wl-dropdown.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WlDropdownOption",
+          "declaration": {
+            "name": "WlDropdownOption",
+            "module": "src/elements/ui/wl-dropdown.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-dropdown-option",
+          "declaration": {
+            "name": "WlDropdownOption",
+            "module": "src/elements/ui/wl-dropdown.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-form-field.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlFormField",
+          "members": [
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "shadowRootOptions",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ ...LitElement.shadowRootOptions, delegatesFocus: true, }"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "required",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_controlElements",
+              "type": {
+                "text": "HTMLElement[]"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "#handleLabelClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#getLabelElement",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#updateControlElementsDisabled",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "label"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "required"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-form-field",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlFormField",
+          "declaration": {
+            "name": "WlFormField",
+            "module": "src/elements/ui/wl-form-field.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-form-field",
+          "declaration": {
+            "name": "WlFormField",
+            "module": "src/elements/ui/wl-form-field.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-info-tooltip.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlInfoTooltip",
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "'More info'",
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "placement",
+              "type": {
+                "text": "Placement"
+              },
+              "default": "'bottom'",
+              "attribute": "placement",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "trigger",
+              "type": {
+                "text": "'hover' | 'focus'"
+              },
+              "default": "'focus'",
+              "attribute": "trigger",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "#id",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "++idx"
+            },
+            {
+              "kind": "field",
+              "name": "#tooltipId",
+              "privacy": "private",
+              "default": "`tooltip-${this.#id}`"
+            },
+            {
+              "kind": "field",
+              "name": "#tooltipArrowId",
+              "privacy": "private",
+              "default": "`tooltip-arrow-${this.#id}`"
+            },
+            {
+              "kind": "field",
+              "name": "#buttonId",
+              "privacy": "private",
+              "default": "`button-${this.#id}`"
+            },
+            {
+              "kind": "field",
+              "name": "#button",
+              "privacy": "private",
+              "type": {
+                "text": "HTMLButtonElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#tooltip",
+              "privacy": "private",
+              "type": {
+                "text": "HTMLDivElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#tooltipArrow",
+              "privacy": "private",
+              "type": {
+                "text": "HTMLDivElement"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "#queryById",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "id",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#detachListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#attachListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#cleanup",
+              "privacy": "private",
+              "type": {
+                "text": "ReturnType<typeof autoUpdate> | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#focus",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "show"
+            },
+            {
+              "kind": "field",
+              "name": "hide"
+            },
+            {
+              "kind": "field",
+              "name": "#update",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "'More info'",
+              "fieldName": "label"
+            },
+            {
+              "name": "placement",
+              "type": {
+                "text": "Placement"
+              },
+              "default": "'bottom'",
+              "fieldName": "placement"
+            },
+            {
+              "name": "trigger",
+              "type": {
+                "text": "'hover' | 'focus'"
+              },
+              "default": "'focus'",
+              "fieldName": "trigger"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-info-tooltip",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlInfoTooltip",
+          "declaration": {
+            "name": "WlInfoTooltip",
+            "module": "src/elements/ui/wl-info-tooltip.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-info-tooltip",
+          "declaration": {
+            "name": "WlInfoTooltip",
+            "module": "src/elements/ui/wl-info-tooltip.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-input.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlInput",
+          "members": [
+            {
+              "kind": "field",
+              "name": "shadowRootOptions",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ ...LitElement.shadowRootOptions, delegatesFocus: true, }"
+            },
+            {
+              "kind": "field",
+              "name": "formAssociated",
+              "type": {
+                "text": "boolean"
+              },
+              "static": true,
+              "default": "true"
+            },
+            {
+              "kind": "field",
+              "name": "#internals",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "step",
+              "type": {
+                "text": "number | undefined"
+              },
+              "attribute": "step",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "class",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "class"
+            },
+            {
+              "kind": "field",
+              "name": "inputId",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "input-id"
+            },
+            {
+              "kind": "field",
+              "name": "_id",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "`input:${++idx}`"
+            },
+            {
+              "kind": "field",
+              "name": "isDirty",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "HTMLInputElement['type']"
+              },
+              "default": "'text'",
+              "attribute": "type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "HTMLInputElement['required']"
+              },
+              "default": "false",
+              "attribute": "required",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "HTMLInputElement['disabled']"
+              },
+              "default": "false",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "HTMLInputElement['readOnly']"
+              },
+              "default": "false",
+              "attribute": "readonly",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "onChange",
+              "type": {
+                "text": "HTMLInputElement['onchange'] | undefined"
+              },
+              "attribute": "onChange"
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "HTMLInputElement['placeholder']"
+              },
+              "default": "''",
+              "attribute": "placeholder",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "autocomplete",
+              "type": {
+                "text": "HTMLInputElement['autocomplete'] | undefined"
+              },
+              "attribute": "autocomplete",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "inputmode",
+              "type": {
+                "text": "HTMLInputElement['inputMode']"
+              },
+              "default": "'text'",
+              "attribute": "inputmode"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "HTMLInputElement['name']"
+              },
+              "default": "''",
+              "attribute": "name",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "pattern",
+              "type": {
+                "text": "HTMLInputElement['pattern'] | undefined"
+              },
+              "attribute": "pattern",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "HTMLInputElement['value']"
+              },
+              "default": "''",
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_input",
+              "type": {
+                "text": "HTMLInputElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_assignedNodesPrefix",
+              "type": {
+                "text": "Node[] | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_assignedNodesSuffix",
+              "type": {
+                "text": "Node[] | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#waitForLoadedImages",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "node",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#setPadding",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "type",
+                  "type": {
+                    "text": "'prefix' | 'suffix'"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_slotChangeSuffix",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_slotChangePrefix",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "setValidity",
+              "parameters": [
+                {
+                  "name": "flags",
+                  "optional": true,
+                  "type": {
+                    "text": "ValidityStateFlags"
+                  }
+                },
+                {
+                  "name": "message",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "setCustomValidity",
+              "parameters": [
+                {
+                  "name": "error",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity"
+            },
+            {
+              "kind": "method",
+              "name": "reportValidity"
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "formDisabledCallback",
+              "parameters": [
+                {
+                  "name": "disabled",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "formStateRestoreCallback",
+              "parameters": [
+                {
+                  "name": "state",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#syncInputInternal",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "#onKeyDown",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#onInput",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "step",
+              "type": {
+                "text": "number | undefined"
+              },
+              "fieldName": "step"
+            },
+            {
+              "name": "class",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "class"
+            },
+            {
+              "name": "input-id",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "inputId"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "HTMLInputElement['type']"
+              },
+              "default": "'text'",
+              "fieldName": "type"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "HTMLInputElement['required']"
+              },
+              "default": "false",
+              "fieldName": "required"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "HTMLInputElement['disabled']"
+              },
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "HTMLInputElement['readOnly']"
+              },
+              "default": "false",
+              "fieldName": "readonly"
+            },
+            {
+              "name": "onChange",
+              "type": {
+                "text": "HTMLInputElement['onchange'] | undefined"
+              },
+              "fieldName": "onChange"
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "HTMLInputElement['placeholder']"
+              },
+              "default": "''",
+              "fieldName": "placeholder"
+            },
+            {
+              "name": "autocomplete",
+              "type": {
+                "text": "HTMLInputElement['autocomplete'] | undefined"
+              },
+              "fieldName": "autocomplete"
+            },
+            {
+              "name": "inputmode",
+              "type": {
+                "text": "HTMLInputElement['inputMode']"
+              },
+              "default": "'text'",
+              "fieldName": "inputmode"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "HTMLInputElement['name']"
+              },
+              "default": "''",
+              "fieldName": "name"
+            },
+            {
+              "name": "pattern",
+              "type": {
+                "text": "HTMLInputElement['pattern'] | undefined"
+              },
+              "fieldName": "pattern"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "HTMLInputElement['value']"
+              },
+              "default": "''",
+              "fieldName": "value"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlInput",
+          "declaration": {
+            "name": "WlInput",
+            "module": "src/elements/ui/wl-input.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-input",
+          "declaration": {
+            "name": "WlInput",
+            "module": "src/elements/ui/wl-input.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-link.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlLink",
+          "members": [
+            {
+              "kind": "field",
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "href",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "class",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "class-anchor"
+            },
+            {
+              "kind": "method",
+              "name": "#onClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            }
+          ],
+          "attributes": [
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "href"
+            },
+            {
+              "name": "class-anchor",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "class"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-link",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlLink",
+          "declaration": {
+            "name": "WlLink",
+            "module": "src/elements/ui/wl-link.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-link",
+          "declaration": {
+            "name": "WlLink",
+            "module": "src/elements/ui/wl-link.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/ui/wl-loading-spinner.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlLoadingSpinner",
+          "members": [
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "Size"
+              },
+              "default": "'md'",
+              "attribute": "size",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "size",
+              "type": {
+                "text": "Size"
+              },
+              "default": "'md'",
+              "fieldName": "size"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-loading-spinner",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlLoadingSpinner",
+          "declaration": {
+            "name": "WlLoadingSpinner",
+            "module": "src/elements/ui/wl-loading-spinner.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-loading-spinner",
+          "declaration": {
+            "name": "WlLoadingSpinner",
+            "module": "src/elements/ui/wl-loading-spinner.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-view-details"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-view-group"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-view-product"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-view-products"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-view-encrypted-payload"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-view"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlView",
+          "members": [
+            {
+              "kind": "field",
+              "name": "context",
+              "type": {
+                "text": "Context | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_main",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_onContext",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "CustomEvent"
+                  }
+                }
+              ],
+              "description": "Event handler for `context`\nStore context in provider and session storage"
+            },
+            {
+              "kind": "method",
+              "name": "_onViewUpdate",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "CustomEvent"
+                  }
+                }
+              ],
+              "description": "Event handler for `view-update`\nWhen a view updates, navigate to the new view"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wl-view",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlView",
+          "declaration": {
+            "name": "WlView",
+            "module": "src/elements/views/wl-view.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-view",
+          "declaration": {
+            "name": "WlView",
+            "module": "src/elements/views/wl-view.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view-group/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlViewGroup",
+          "members": [
+            {
+              "kind": "field",
+              "name": "groupId",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "groupId"
+            },
+            {
+              "kind": "field",
+              "name": "#loadPaymentProductGroupTask",
+              "privacy": "private",
+              "default": "new Task<[], PaymentProductGroup>(this, { autoRun: false, onError: console.error, task: async () => { const { session, paymentDetails } = this.sessionController; if (!session) throw new Error('No session found'); if (!this.groupId) throw new Error('No group id found'); return session.getPaymentProductGroup(this.groupId, paymentDetails); }, })"
+            },
+            {
+              "kind": "method",
+              "name": "onBeforeEnter",
+              "parameters": [
+                {
+                  "name": "location",
+                  "type": {
+                    "text": "RouterLocation"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "afterContextProviderReady",
+              "privacy": "protected",
+              "description": "Custom lifecycle\nThis method is called after the first update is rendered\nwhich allows consuming data from the context provider",
+              "inheritedFrom": {
+                "name": "WlViewMixin",
+                "module": "src/mixins/wl-view-mixin.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "sessionController",
+              "privacy": "protected",
+              "default": "new SessionController(this)",
+              "inheritedFrom": {
+                "name": "WlViewMixin",
+                "module": "src/mixins/wl-view-mixin.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onAfterEnter",
+              "description": "Lifecycle provided by",
+              "inheritedFrom": {
+                "name": "WlViewMixin",
+                "module": "src/mixins/wl-view-mixin.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "groupId",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "groupId"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "WlViewMixin",
+              "package": "@/mixins"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-view-group",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlViewGroup",
+          "declaration": {
+            "name": "WlViewGroup",
+            "module": "src/elements/views/wl-view-group/index.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-view-group",
+          "declaration": {
+            "name": "WlViewGroup",
+            "module": "src/elements/views/wl-view-group/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view-encrypted-payload/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Renders the encrypted payload which users can use\nto copy and paste it into the payment form.",
+          "name": "WlViewEncryptedPayload",
+          "members": [
+            {
+              "kind": "field",
+              "name": "encryptedPayload",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "encryptedPayload"
+            },
+            {
+              "kind": "field",
+              "name": "_form",
+              "type": {
+                "text": "HTMLFormElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "onBeforeEnter",
+              "parameters": [
+                {
+                  "name": "location",
+                  "type": {
+                    "text": "RouterLocation"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#selectPayloadText",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "sessionController",
+              "privacy": "protected",
+              "default": "new SessionController(this)",
+              "inheritedFrom": {
+                "name": "WlViewMixin",
+                "module": "src/mixins/wl-view-mixin.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterContextProviderReady",
+              "privacy": "protected",
+              "description": "Custom lifecycle\nThis method is called after the first update is rendered\nwhich allows consuming data from the context provider",
+              "inheritedFrom": {
+                "name": "WlViewMixin",
+                "module": "src/mixins/wl-view-mixin.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onAfterEnter",
+              "description": "Lifecycle provided by",
+              "inheritedFrom": {
+                "name": "WlViewMixin",
+                "module": "src/mixins/wl-view-mixin.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "encryptedPayload",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "encryptedPayload"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "WlViewMixin",
+              "package": "@/mixins"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-view-encrypted-payload",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlViewEncryptedPayload",
+          "declaration": {
+            "name": "WlViewEncryptedPayload",
+            "module": "src/elements/views/wl-view-encrypted-payload/index.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-view-encrypted-payload",
+          "declaration": {
+            "name": "WlViewEncryptedPayload",
+            "module": "src/elements/views/wl-view-encrypted-payload/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view-details/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Renders the form for retrieving the session- and payment details\n+ some additional data for the payment and dispatch this data as event `context`\nwhich is caught in the `wl-view` and used to navigate to the next view.",
+          "name": "WlViewDetailsForm",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#processForm",
+              "privacy": "private",
+              "default": "new Task<[Record<string, string>], ProcessFormResponse>(this, { autoRun: false, onError: console.error, onComplete: (context) => { const eventOptions = { bubbles: true, composed: true }; const contextEvent = new CustomEvent('context', { ...eventOptions, detail: context, }); const viewUpdateEvent = new CustomEvent('view-update', { ...eventOptions, detail: { view: RouteViewComponentName.PaymentMethodSelection }, }); this.dispatchEvent(contextEvent); this.dispatchEvent(viewUpdateEvent); }, task: async ([context]) => ({ groupPaymentProducts: !!context.groupPaymentProducts, googlePay: context.googlePay === 'on', applePay: context.applePay === 'on', gatewayMerchantId: context.gatewayMerchantId, merchantId: context.merchantId, merchantName: context.merchantName, sessionDetails: { clientSessionId: context.clientSessionId, assetUrl: context.assetUrl, clientApiUrl: context.clientApiUrl, customerId: context.customerId, }, paymentDetails: { totalAmount: Number(context.totalAmount), countryCode: context.countryCode, currency: context.currency, locale: context.locale, isRecurring: context.isRecurring === 'on', }, }), })"
+            },
+            {
+              "kind": "method",
+              "name": "#onSubmit",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#parseFieldValues",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "context",
+                  "type": {
+                    "text": "Partial<Context>"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#onPasteJSONResponse",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "CustomEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#renderFields",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "fields",
+                  "type": {
+                    "text": "Field[]"
+                  }
+                }
+              ]
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-view-details",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlViewDetailsForm",
+          "declaration": {
+            "name": "WlViewDetailsForm",
+            "module": "src/elements/views/wl-view-details/index.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-view-details",
+          "declaration": {
+            "name": "WlViewDetailsForm",
+            "module": "src/elements/views/wl-view-details/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view-product/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlViewProduct",
+          "members": [
+            {
+              "kind": "field",
+              "name": "productId",
+              "type": {
+                "text": "PaymentProduct['id'] | undefined"
+              },
+              "attribute": "productId"
+            },
+            {
+              "kind": "field",
+              "name": "accountOnFileId",
+              "type": {
+                "text": "AccountOnFile['id'] | undefined"
+              },
+              "attribute": "accountOnFileId"
+            },
+            {
+              "kind": "field",
+              "name": "_accountOnFile",
+              "type": {
+                "text": "AccountOnFile | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#loadPaymentProductTask",
+              "privacy": "private",
+              "default": "new Task<[], PaymentProduct>(this, { autoRun: false, onError: console.error, onComplete: (paymentProduct) => { this.sessionController.setPaymentProduct(paymentProduct); this._accountOnFile = this.accountOnFileId !== undefined ? paymentProduct.getAccountOnFile(this.accountOnFileId) : undefined; }, task: async () => { const { session, paymentDetails, paymentProductSpecificInputs } = this.sessionController; if (!session) throw new Error('No session found'); if (!this.productId) throw new Error('No product id found'); return session.getPaymentProduct( this.productId, paymentDetails, paymentProductSpecificInputs, ); }, })"
+            },
+            {
+              "kind": "method",
+              "name": "onBeforeEnter",
+              "parameters": [
+                {
+                  "name": "location",
+                  "type": {
+                    "text": "RouterLocation"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "afterContextProviderReady",
+              "privacy": "protected",
+              "description": "Custom lifecycle\nThis method is called after the first update is rendered\nwhich allows consuming data from the context provider",
+              "inheritedFrom": {
+                "name": "WlViewMixin",
+                "module": "src/mixins/wl-view-mixin.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "sessionController",
+              "privacy": "protected",
+              "default": "new SessionController(this)",
+              "inheritedFrom": {
+                "name": "WlViewMixin",
+                "module": "src/mixins/wl-view-mixin.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onAfterEnter",
+              "description": "Lifecycle provided by",
+              "inheritedFrom": {
+                "name": "WlViewMixin",
+                "module": "src/mixins/wl-view-mixin.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "productId",
+              "type": {
+                "text": "PaymentProduct['id'] | undefined"
+              },
+              "fieldName": "productId"
+            },
+            {
+              "name": "accountOnFileId",
+              "type": {
+                "text": "AccountOnFile['id'] | undefined"
+              },
+              "fieldName": "accountOnFileId"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "WlViewMixin",
+              "package": "@/mixins"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-view-product",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlViewProduct",
+          "declaration": {
+            "name": "WlViewProduct",
+            "module": "src/elements/views/wl-view-product/index.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-view-product",
+          "declaration": {
+            "name": "WlViewProduct",
+            "module": "src/elements/views/wl-view-product/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view-products/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlViewProducts",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_items",
+              "type": {
+                "text": "Data['basicPaymentItems']"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "_accountsOnFile",
+              "type": {
+                "text": "Data['accountsOnFile']"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "#loadProductsTask",
+              "privacy": "private",
+              "default": "new Task(this, { autoRun: false, onError: console.error, onComplete: ({ accountsOnFile, basicPaymentItems }) => { this._items = basicPaymentItems; this._accountsOnFile = accountsOnFile; }, task: async () => { if (this.sessionController.context?.googlePay) { await loadScript('https://pay.google.com/gp/p/js/pay.js'); } const { paymentProductSpecificInputs, groupPaymentProducts, session, paymentDetails, } = this.sessionController; if (!session) throw new Error('No session found'); if (!paymentDetails) throw new Error('No payment details found'); const { accountsOnFile, basicPaymentItems } = await session.getBasicPaymentItems( paymentDetails, !!groupPaymentProducts, paymentProductSpecificInputs, ); return { accountsOnFile, basicPaymentItems }; }, })"
+            },
+            {
+              "kind": "method",
+              "name": "afterContextProviderReady",
+              "privacy": "protected",
+              "description": "Custom lifecycle\nThis method is called after the first update is rendered\nwhich allows consuming data from the context provider",
+              "inheritedFrom": {
+                "name": "WlViewMixin",
+                "module": "src/mixins/wl-view-mixin.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "sessionController",
+              "privacy": "protected",
+              "default": "new SessionController(this)",
+              "inheritedFrom": {
+                "name": "WlViewMixin",
+                "module": "src/mixins/wl-view-mixin.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onAfterEnter",
+              "description": "Lifecycle provided by",
+              "inheritedFrom": {
+                "name": "WlViewMixin",
+                "module": "src/mixins/wl-view-mixin.ts"
+              }
+            }
+          ],
+          "mixins": [
+            {
+              "name": "WlViewMixin",
+              "package": "@/mixins"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-view-products",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlViewProducts",
+          "declaration": {
+            "name": "WlViewProducts",
+            "module": "src/elements/views/wl-view-products/index.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-view-products",
+          "declaration": {
+            "name": "WlViewProducts",
+            "module": "src/elements/views/wl-view-products/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view-product/components/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-form-payment"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view-product/components/wl-form-payment.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlFormPayment",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#sessionController",
+              "privacy": "private",
+              "default": "new SessionController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "#unsubscribePaymentProductUpdate",
+              "privacy": "private",
+              "type": {
+                "text": "ReturnType<\n    SessionController['subscribeToPaymentProductUpdate']\n  > | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#encryptTask",
+              "privacy": "private",
+              "default": "new Task<[Record<string, string>, boolean], string>(this, { autoRun: false, onError: console.error, onComplete: (payload) => { this.dispatchEvent( new CustomEvent('view-update', { bubbles: true, composed: true, detail: { view: RouteViewComponentName.EncryptedPayload, params: { payload }, }, }), ); }, task: async ([data, remember = false]) => { try { return this.#sessionController.encryptPaymentRequest(data, remember); } catch (err) { if (err instanceof EncryptError) { err.validationErrors.forEach(({ fieldId }) => this.#forceValidateFieldById(fieldId), ); } throw err; } }, })",
+              "description": "Encrypt payload task"
+            },
+            {
+              "kind": "field",
+              "name": "#fieldsDisabledTask",
+              "privacy": "private",
+              "default": "new Task(this, { args: () => [this.#encryptTask.status], task: ([status]) => { this.fieldElements?.forEach((field) => { field.loading = status === TaskStatus.PENDING; }); }, })",
+              "description": "disable/enable fields based in encrypt task status"
+            },
+            {
+              "kind": "field",
+              "name": "fieldElements",
+              "type": {
+                "text": "PaymentProductFieldElement[] | undefined"
+              },
+              "description": "List of payment product field elements"
+            },
+            {
+              "kind": "field",
+              "name": "paymentProductFields",
+              "type": {
+                "text": "PaymentProductField[] | undefined"
+              },
+              "description": "Payment product fields data\nThe `fieldElements` are rendered based on this data",
+              "attribute": "paymentProductFields"
+            },
+            {
+              "kind": "field",
+              "name": "accountOnFile",
+              "type": {
+                "text": "AccountOnFile | undefined"
+              },
+              "description": "Optional account on file data\nIf set, the form will be pre-filled with the account on file data",
+              "attribute": "accountOnFile"
+            },
+            {
+              "kind": "field",
+              "name": "autoTokenized",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If set to true, the form will automatically tokenize the payment request",
+              "attribute": "auto-tokenized"
+            },
+            {
+              "kind": "field",
+              "name": "allowsTokenization",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If set to true, the form will allow tokenization",
+              "attribute": "allows-tokenization"
+            },
+            {
+              "kind": "method",
+              "name": "#forceValidateFieldById",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "fieldId",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Force validate input field by field id\nThis will force running all validation rules for the given field"
+            },
+            {
+              "kind": "method",
+              "name": "#mergePaymentProductFieldsInFieldElements",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "PaymentProductFieldElement[]"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "paymentProductFields",
+                  "type": {
+                    "text": "PaymentProductField[]"
+                  }
+                }
+              ],
+              "description": "Returns new field elements where the given payment product\nfields are merged into the existing field elements"
+            },
+            {
+              "kind": "method",
+              "name": "#applyAccountOnFileToFieldElements",
+              "privacy": "private",
+              "description": "Update field elements to apply AccountOnFile attributes\nsuch as value, disabled and readonly properties"
+            },
+            {
+              "kind": "method",
+              "name": "#fieldIsWriteable",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "fieldId",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Returns true if field is writeable"
+            },
+            {
+              "kind": "method",
+              "name": "_onSubmit",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "SubmitEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#showRememberMe",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "description": "Returns true, whether the \"remember me\" checkbox should be shown"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "paymentProductFields",
+              "type": {
+                "text": "PaymentProductField[] | undefined"
+              },
+              "description": "Payment product fields data\nThe `fieldElements` are rendered based on this data",
+              "fieldName": "paymentProductFields"
+            },
+            {
+              "name": "accountOnFile",
+              "type": {
+                "text": "AccountOnFile | undefined"
+              },
+              "description": "Optional account on file data\nIf set, the form will be pre-filled with the account on file data",
+              "fieldName": "accountOnFile"
+            },
+            {
+              "name": "auto-tokenized",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If set to true, the form will automatically tokenize the payment request",
+              "fieldName": "autoTokenized"
+            },
+            {
+              "name": "allows-tokenization",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If set to true, the form will allow tokenization",
+              "fieldName": "allowsTokenization"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-form-payment",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlFormPayment",
+          "declaration": {
+            "name": "WlFormPayment",
+            "module": "src/elements/views/wl-view-product/components/wl-form-payment.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-form-payment",
+          "declaration": {
+            "name": "WlFormPayment",
+            "module": "src/elements/views/wl-view-product/components/wl-form-payment.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view-products/components/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-link-account-on-file"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-link-payment-product"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-google-pay"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./wl-apple-pay"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view-products/components/wl-apple-pay.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlApplePay",
+          "members": [
+            {
+              "kind": "field",
+              "name": "sessionController",
+              "privacy": "protected",
+              "default": "new SessionController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "BasicPaymentItem"
+              },
+              "attribute": "data"
+            },
+            {
+              "kind": "field",
+              "name": "images",
+              "type": {
+                "text": "HTMLImageElement[]"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#initApplePayTask",
+              "privacy": "private",
+              "default": "new Task(this, { autoRun: false, onError: console.error, task: async () => { const session = this.sessionController.session!; const paymentDetails = this.sessionController.paymentDetails!; const paymentProductSpecificInputs = this.sessionController .paymentProductSpecificInputs as Required< Pick<PaymentProductSpecificInputs, 'applePay'> >; const paymentProduct = await session.getPaymentProduct( this.data.id as PaymentProduct['id'], paymentDetails, paymentProductSpecificInputs, ); this.sessionController.setPaymentProduct(paymentProduct); }, })"
+            },
+            {
+              "kind": "field",
+              "name": "#processPaymentTask",
+              "privacy": "private",
+              "default": "new Task(this, { autoRun: false, onError: console.error, onComplete: (payload) => { this.dispatchEvent( new CustomEvent('view-update', { bubbles: true, composed: true, detail: { view: RouteViewComponentName.EncryptedPayload, params: { payload }, }, }), ); }, task: async () => { const session = this.sessionController.session!; const paymentProduct = session.getPaymentRequest().getPaymentProduct()!; const { networks: supportedNetworks } = paymentProduct.paymentProduct302SpecificData!; const { applePay } = this.sessionController .paymentProductSpecificInputs as Required< Pick<PaymentProductSpecificInputs, 'applePay'> >; const result = await session.createApplePayPayment( this.sessionController.paymentDetails!, { ...applePay, acquirerCountry: paymentProduct.acquirerCountry }, supportedNetworks, ); return this.sessionController.encryptPaymentRequest({ encryptedPaymentData: JSON.stringify(result.data.paymentData), }); }, })"
+            },
+            {
+              "kind": "method",
+              "name": "#updateProductImage",
+              "privacy": "private",
+              "description": "Update the transparency of the image within the slot\nwhen the `isDisabled` state changes."
+            },
+            {
+              "kind": "field",
+              "name": "readyToPay",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "isDisabled",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "isLoading",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "#onClick",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "data",
+              "type": {
+                "text": "BasicPaymentItem"
+              },
+              "fieldName": "data"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-apple-pay",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlApplePay",
+          "declaration": {
+            "name": "WlApplePay",
+            "module": "src/elements/views/wl-view-products/components/wl-apple-pay.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-apple-pay",
+          "declaration": {
+            "name": "WlApplePay",
+            "module": "src/elements/views/wl-view-products/components/wl-apple-pay.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view-products/components/wl-google-pay.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlGooglePay",
+          "members": [
+            {
+              "kind": "field",
+              "name": "sessionController",
+              "privacy": "protected",
+              "default": "new SessionController(this)"
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "BasicPaymentItem"
+              },
+              "attribute": "data"
+            },
+            {
+              "kind": "field",
+              "name": "_paymentClient",
+              "type": {
+                "text": "google.payments.api.PaymentsClient | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_tokenizationSpecification",
+              "type": {
+                "text": "google.payments.api.PaymentMethodTokenizationSpecification | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_baseCardPaymentMethod",
+              "type": {
+                "text": "google.payments.api.IsReadyToPayPaymentMethodSpecification | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_transactionInfo",
+              "type": {
+                "text": "google.payments.api.TransactionInfo | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "images",
+              "type": {
+                "text": "HTMLImageElement[]"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#initGooglePayTask",
+              "privacy": "private",
+              "default": "new Task(this, { autoRun: false, onError: console.error, task: async () => { const session = this.sessionController.session!; const paymentDetails = this.sessionController.paymentDetails!; const paymentProductSpecificInputs = this.sessionController .paymentProductSpecificInputs as Required< Pick<PaymentProductSpecificInputs, 'googlePay'> >; const paymentProduct = await session.getPaymentProduct( this.data.id as PaymentProduct['id'], paymentDetails, paymentProductSpecificInputs, ); if (!paymentProduct.paymentProduct320SpecificData) { throw new Error('No payment product 320 specific data found'); } this.sessionController.setPaymentProduct(paymentProduct); this._tokenizationSpecification = { type: 'PAYMENT_GATEWAY', parameters: { gateway: paymentProduct.paymentProduct320SpecificData.gateway, gatewayMerchantId: paymentProductSpecificInputs.googlePay.gatewayMerchantId, }, }; const allowedCardNetworks = paymentProduct.paymentProduct320SpecificData .networks as google.payments.api.CardNetwork[]; this._baseCardPaymentMethod = { type: 'CARD', parameters: { allowedAuthMethods, allowedCardNetworks }, }; this._transactionInfo = { currencyCode: paymentDetails.currency, totalPriceStatus: 'FINAL', // @note: // In this example we divided the `totalAmount` by 100. // The `totalAmount` is the smallest possible denominator, which is cents for EUR. // // Google Pay `totalPrice` uses a different format: // \"Total monetary value of the transaction with an optional decimal precision of two decimal places\" // // The user will have to convert this manually, when the smallest possible // denominator is not the value divided by 100 (for example, JPY). totalPrice: (paymentDetails.totalAmount / 100).toString(), countryCode: paymentProduct.acquirerCountry, }; return this._paymentClient!.isReadyToPay({ ...baseRequest, allowedPaymentMethods: [this._baseCardPaymentMethod], }); }, })"
+            },
+            {
+              "kind": "field",
+              "name": "#processPaymentTask",
+              "privacy": "private",
+              "default": "new Task(this, { autoRun: false, onError: console.error, onComplete: (payload) => { this.dispatchEvent( new CustomEvent('view-update', { bubbles: true, composed: true, detail: { view: RouteViewComponentName.EncryptedPayload, params: { payload }, }, }), ); }, task: async () => { const context = this.sessionController.context!; const merchantInfo = { merchantId: context.merchantId!, merchantName: context.merchantName!, }; const allowedPaymentMethod = { ...this._baseCardPaymentMethod!, tokenizationSpecification: this._tokenizationSpecification!, }; const paymentData = await this._paymentClient!.loadPaymentData({ ...baseRequest, allowedPaymentMethods: [allowedPaymentMethod], transactionInfo: this._transactionInfo!, merchantInfo, }); const encryptedPaymentData = paymentData.paymentMethodData.tokenizationData.token; return this.sessionController.encryptPaymentRequest({ encryptedPaymentData, }); }, })"
+            },
+            {
+              "kind": "field",
+              "name": "readyToPay",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "isDisabled",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "isLoading",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "#updateProductImage",
+              "privacy": "private",
+              "description": "Update the transparency of the image within the slot\nwhen the `isDisabled` state changes."
+            },
+            {
+              "kind": "method",
+              "name": "#onClick",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "data",
+              "type": {
+                "text": "BasicPaymentItem"
+              },
+              "fieldName": "data"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-google-pay",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlGooglePay",
+          "declaration": {
+            "name": "WlGooglePay",
+            "module": "src/elements/views/wl-view-products/components/wl-google-pay.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-google-pay",
+          "declaration": {
+            "name": "WlGooglePay",
+            "module": "src/elements/views/wl-view-products/components/wl-google-pay.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view-products/components/wl-link-account-on-file.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlLinkAccountOnFile",
+          "members": [
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "AccountOnFile"
+              },
+              "attribute": "data"
+            },
+            {
+              "kind": "field",
+              "name": "_label",
+              "privacy": "private",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "_href",
+              "privacy": "private",
+              "readonly": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "data",
+              "type": {
+                "text": "AccountOnFile"
+              },
+              "fieldName": "data"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-link-account-on-file",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlLinkAccountOnFile",
+          "declaration": {
+            "name": "WlLinkAccountOnFile",
+            "module": "src/elements/views/wl-view-products/components/wl-link-account-on-file.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-link-account-on-file",
+          "declaration": {
+            "name": "WlLinkAccountOnFile",
+            "module": "src/elements/views/wl-view-products/components/wl-link-account-on-file.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/views/wl-view-products/components/wl-link-payment-product.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WlLinkPaymentProduct",
+          "members": [
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "BasicPaymentItem"
+              },
+              "attribute": "data"
+            },
+            {
+              "kind": "field",
+              "name": "_label",
+              "privacy": "private",
+              "description": "Get label of payment product",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "_href",
+              "privacy": "private",
+              "description": "Get path to payment details page",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "isGooglePay",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "isApplePay",
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "supported",
+              "description": "Only support cards to navigate to payment detail page",
+              "readonly": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "data",
+              "type": {
+                "text": "BasicPaymentItem"
+              },
+              "fieldName": "data"
+            }
+          ],
+          "superclass": {
+            "name": "TailwindElement",
+            "package": "@/mixins"
+          },
+          "tagName": "wl-link-payment-product",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WlLinkPaymentProduct",
+          "declaration": {
+            "name": "WlLinkPaymentProduct",
+            "module": "src/elements/views/wl-view-products/components/wl-link-payment-product.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wl-link-payment-product",
+          "declaration": {
+            "name": "WlLinkPaymentProduct",
+            "module": "src/elements/views/wl-view-products/components/wl-link-payment-product.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

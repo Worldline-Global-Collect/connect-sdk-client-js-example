@@ -1,0 +1,6 @@
+{
+  "component": "checkbox",
+  "name": "remember",
+  "label": "Remember my details for future purchases",
+  "description": "If you check this box your payment information will be stored for future purchases."
+}

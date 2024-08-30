@@ -1,0 +1,54 @@
+[
+  {
+    "component": "input",
+    "name": "countryCode",
+    "label": "Country Code",
+    "value": "NL",
+    "autocomplete": "country",
+    "description": "The ISO 3166-1 alpha-2 standard 2-letter Country Code of the consumer.",
+    "required": true
+  },
+  {
+    "component": "input",
+    "name": "currency",
+    "label": "Currency Code",
+    "autocomplete": "transaction-currency",
+    "value": "EUR",
+    "description": "The ISO 4217 standard 3-letter Currency Code of the currency in which the payment will be made.",
+    "required": true
+  },
+  {
+    "component": "input",
+    "name": "totalAmount",
+    "autocomplete": "transaction-amount",
+    "label": "Amount",
+    "type": "number",
+    "value": "12345",
+    "step": 1,
+    "description": "The amount that will be used for this payment. Note that the value must be provided in the smallest possible denominator for the currency, and should be formatted before showing.",
+    "required": true
+  },
+  {
+    "component": "select",
+    "name": "locale",
+    "label": "Locale",
+    "selected": "en_GB",
+    "autocomplete": "language",
+    "options": [
+      { "value": "ar_DZ", "label": "Arabic (ar_DZ)" },
+      { "value": "zh_TW", "label": "Chinese (zh_TW)" },
+      { "value": "da_DK", "label": "Danish (da_DK)" },
+      { "value": "nl_BE", "label": "Dutch (nl_BE)" },
+      { "value": "nl_NL", "label": "Dutch (nl_NL)" },
+      { "value": "en_MT", "label": "English (en_MT)" },
+      { "value": "en_GB", "label": "English (en_GB)" },
+      { "value": "fi_FI", "label": "Finnish (fi_FI)" },
+      { "value": "fr_CH", "label": "French (fr_CH)" },
+      { "value": "fr_BE", "label": "French (fr_BE)" },
+      { "value": "de_DE", "label": "German (de_DE)" },
+      { "value": "el_CY", "label": "Greek (el_CY)" },
+      { "value": "in_ID", "label": "Indonesian (in_ID)" },
+      { "value": "mk_MK", "label": "Macedonian (mk_MK)" }
+    ]
+  }
+]

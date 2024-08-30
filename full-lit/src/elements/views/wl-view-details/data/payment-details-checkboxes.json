@@ -1,0 +1,55 @@
+[
+  {
+    "component": "checkbox",
+    "name": "isRecurring",
+    "label": "Payment is recurring",
+    "description": "Indicates whether the payment product that is used for this payment should support recurring payments. If set to true, products not supporting recurring will be filtered."
+  },
+  {
+    "component": "checkbox",
+    "name": "groupPaymentProducts",
+    "label": "Group payment products",
+    "description": "Enabling this setting will bundle all Credit Card payment products to a single list item (Payment Product Group). The IIN Details service call can be used to determine what card product is actually used by the consumer."
+  },
+  {
+    "component": "checkbox",
+    "name": "googlePay",
+    "label": "Google Pay",
+    "fields": [
+      {
+        "component": "input",
+        "name": "gatewayMerchantId",
+        "label": "Connect Merchant ID",
+        "required": true
+      },
+      {
+        "component": "input",
+        "name": "merchantId",
+        "label": "Merchant ID",
+        "description": "Your Worldline merchant ID. You can find this ID in the Configuration Center.",
+        "required": true
+      },
+      {
+        "component": "input",
+        "name": "merchantName",
+        "label": "Merchant Name",
+        "description": "The name of your business that will be shown to consumers in the Payment Sheet, and in Google Pay payment overviews.",
+        "required": true
+      }
+    ]
+  },
+  {
+    "component": "checkbox",
+    "name": "applePay",
+    "label": "Apple Pay",
+    "fields": [
+      {
+        "component": "input",
+        "name": "merchantName",
+        "label": "Merchant Name",
+        "description": "This is used as an input for the Apple Pay payment button. You can provide your company name in a human-readable form.",
+        "required": true
+      }
+    ]
+  }
+]

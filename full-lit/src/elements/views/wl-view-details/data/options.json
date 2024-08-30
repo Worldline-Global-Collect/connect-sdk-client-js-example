@@ -1,0 +1,53 @@
+[
+  {
+    "component": "radio-group",
+    "name": "paymentType",
+    "label": "Payment Type",
+    "options": [
+      {
+        "label": "Default",
+        "value": "default",
+        "checked": true
+      },
+      {
+        "label": "Google Pay",
+        "value": "google-pay",
+        "fields": [
+          {
+            "component": "input",
+            "name": "gatewayMerchantId",
+            "label": "Connect Merchant ID",
+            "required": true
+          },
+          {
+            "component": "input",
+            "name": "merchantId",
+            "label": "Merchant ID",
+            "description": "Your Worldline merchant ID. You can find this ID in the Configuration Center.",
+            "required": true
+          },
+          {
+            "component": "input",
+            "name": "merchantName",
+            "label": "Merchant Name",
+            "description": "The name of your business that will be shown to consumers in the Payment Sheet, and in Google Pay payment overviews.",
+            "required": true
+          }
+        ]
+      },
+      {
+        "label": "Apple Pay",
+        "value": "apple-pay",
+        "fields": [
+          {
+            "component": "input",
+            "name": "merchantId",
+            "label": "Merchant ID",
+            "description": "Your Worldline merchant ID. You can find this ID in the Configuration Center.",
+            "required": true
+          }
+        ]
+      }
+    ]
+  }
+]

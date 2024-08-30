@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .payment-product-link {
+    @apply inline-flex w-full gap-3 shadow rounded-md p-4 border border-gray-100 hover:border-gray-200 hover:bg-gray-100 hover:shadow-md transition-colors items-center focus-visible:outline-indigo-500;
+  }
+}

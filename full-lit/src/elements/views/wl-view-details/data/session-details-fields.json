@@ -1,0 +1,33 @@
+[
+  {
+    "component": "input",
+    "name": "clientSessionId",
+    "label": "Client Session ID",
+    "required": true,
+    "description": "Returned in the Server to Server Create Client Session call. This is the identifier of the current session."
+  },
+  {
+    "component": "input",
+    "name": "customerId",
+    "label": "Customer ID",
+    "required": true,
+    "autofocus": true,
+    "description": "Returned in the Server to Server Create Client Session call. This is a temporary identifier for you within the session."
+  },
+  {
+    "component": "input",
+    "name": "clientApiUrl",
+    "label": "Client API URL",
+    "type": "url",
+    "required": true,
+    "description": "Returned in the Server to Server Create Client Session call. This URL points to the Worldline Client API"
+  },
+  {
+    "component": "input",
+    "name": "assetUrl",
+    "label": "Asset URL",
+    "required": true,
+    "type": "url",
+    "description": "Returned in the Server to Server Create Client Session call. This URL can be used to retrieve static resources, such as payment product logo images."
+  }
+]
