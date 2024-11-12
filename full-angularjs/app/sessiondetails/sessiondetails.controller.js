@@ -12,6 +12,7 @@ app.controller('sessiondetails.controller', ['$scope', '$rootScope', '$location'
         currencyCode: (currentContext) ? currentContext.currencyCode : 'EUR',
         locale: (currentContext) ? currentContext.locale : 'en_GB',
         isRecurring: (currentContext) ? currentContext.isRecurring : false,
+        isInstallments: (currentContext) ? currentContext.isInstallments: false,
         grouping: (currentContext) ? currentContext.grouping : true,
         gatewayMerchantId: (currentContext) ? currentContext.gatewayMerchantId : null,
         merchantId: (currentContext) ? currentContext.merchantId : null,

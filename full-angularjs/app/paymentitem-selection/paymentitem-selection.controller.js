@@ -140,7 +140,8 @@ app.controller('paymentitem-selection.controller', ['$scope', '$rootScope', '$lo
             countryCode: context.countryCode,
             locale: context.locale,
             isRecurring: context.isRecurring,
-            currency: context.currencyCode
+            currency: context.currencyCode,
+            isInstallments: context.isInstallments,
         }
         // If you want to use Google Pay in your application, a merchantId is required to set it up.
         // getBasicPaymentItems will use it to perform an extra check(canMakePayment) to see if the user can pay with Google Pay.

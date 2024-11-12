@@ -100,6 +100,7 @@ export class WlViewDetailsForm extends TailwindElement {
         currency: context.currency,
         locale: context.locale,
         isRecurring: context.isRecurring === 'on',
+        isInstallments: context.isInstallments === 'on'
       },
     }),
   });

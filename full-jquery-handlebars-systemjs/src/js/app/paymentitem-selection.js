@@ -22,7 +22,8 @@ $(function () {
         countryCode: context.countryCode,
         locale: context.locale,
         isRecurring: context.isRecurring,
-        currency: context.currency
+        currency: context.currency,
+        isInstallments: context.isInstallments
     };
     var grouping = context.grouping;
     // If you want to use Google Pay in your application, a merchantId is required to set it up.

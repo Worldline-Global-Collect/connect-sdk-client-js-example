@@ -1,6 +1,6 @@
 {
   "name": "sample",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "type": "module",
   "private": true,
   "main": "index.html",
@@ -13,6 +13,6 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "connect-sdk-client-js": "^6.0.3"
+    "connect-sdk-client-js": "^6.0.4"
   }
 }

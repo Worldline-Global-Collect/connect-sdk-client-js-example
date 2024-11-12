@@ -1,6 +1,6 @@
 {
   "name": "connect-sdk-client-js-example-lit",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "",
   "private": true,
   "main": "index.html",
@@ -22,7 +22,7 @@
     "@lit/task": "^1.0.0",
     "@tailwindcss/forms": "^0.5.7",
     "@vaadin/router": "^1.7.5",
-    "connect-sdk-client-js": "^6.0.3",
+    "connect-sdk-client-js": "^6.0.4",
     "lit": "^3.1.2",
     "tailwind-merge": "^2.2.1"
   },

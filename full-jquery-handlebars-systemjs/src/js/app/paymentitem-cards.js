@@ -211,7 +211,7 @@ $(function () {
 
                     } else if (response.status === "EXISTING_BUT_NOT_ALLOWED") {
                         // The creditcard number that the user provided did map on a supported (for this merchant) issuer.
-                        // But the payment is not allowed with the current payment context. (countryCode, isRecurring, amount, currency)
+                        // But the payment is not allowed with the current payment context. (countryCode, isRecurring, isInstallments, amount, currency)
                         // We handle this by adding a method to the jquery validator who checks for the class 'notAllowedInContext'
                         setCardStatus(false, false, false);
                     } else {
@@ -306,7 +306,8 @@ $(function () {
         countryCode: context.countryCode,
         locale: context.locale,
         isRecurring: context.isRecurring,
-        currency: context.currency
+        currency: context.currency,
+        isInstallments: context.isInstallments
     }
     var grouping = context.grouping;
     var session = new connectSDK(sessionDetails);

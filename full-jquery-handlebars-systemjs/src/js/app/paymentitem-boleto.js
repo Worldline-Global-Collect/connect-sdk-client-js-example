@@ -228,7 +228,8 @@ $(function () {
         countryCode: context.countryCode,
         locale: context.locale,
         isRecurring: context.isRecurring,
-        currency: context.currency
+        currency: context.currency,
+        isInstallments: context.isInstallments
     }
     var grouping = context.grouping;
     var session = new connectSDK(sessionDetails);

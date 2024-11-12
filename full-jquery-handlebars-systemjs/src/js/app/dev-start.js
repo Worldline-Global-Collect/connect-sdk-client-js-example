@@ -16,6 +16,7 @@ $(function () {
             $("#currency").val(currentContext.currency);
             $("#locale").val(currentContext.locale);
             $("#isRecurring").val(currentContext.isRecurring);
+            $("#isInstallments").val(currentContext.isInstallments);
             $("#grouping").prop('checked', currentContext.grouping);
 
             // Google Pay specific additional fields, merchantId is required
@@ -43,6 +44,7 @@ $(function () {
                 currency: $("#currency").val(),
                 locale: $("#locale").val(),
                 isRecurring: $("#isRecurring").is(":checked"),
+                isInstallments: $("#isInstallments").is(":checked"),
                 grouping: $("#grouping").is(":checked"),
                 // Google Pay specific:
                 merchantId: $("#merchantId").val(),

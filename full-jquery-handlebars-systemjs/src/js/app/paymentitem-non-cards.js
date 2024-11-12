@@ -268,7 +268,8 @@ $(function () {
     countryCode: context.countryCode,
     locale: context.locale,
     isRecurring: context.isRecurring,
-    currency: context.currency
+    currency: context.currency,
+    isInstallments: context.isInstallments
   };
   var paymentProductSpecificInputs = {
     applePay: {

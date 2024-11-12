@@ -311,7 +311,8 @@ app.controller('paymentitem.controller', ['$rootScope', '$scope', '$location', '
             countryCode: context.countryCode,
             locale: context.locale,
             isRecurring: context.isRecurring,
-            currency: context.currencyCode
+            currency: context.currencyCode,
+            isInstallments: context.isInstallments
         }
 
         $scope.connect.paymentProductSpecificInputs = {
