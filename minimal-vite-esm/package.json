@@ -1,6 +1,6 @@
 {
   "name": "sample",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "type": "module",
   "private": true,
   "main": "index.html",
@@ -8,11 +8,11 @@
     "start": "vite"
   },
   "devDependencies": {
-    "prettier": "^3.0.3",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.4"
   },
   "dependencies": {
-    "connect-sdk-client-js": "^6.0.4"
+    "connect-sdk-client-js": "^6.0.5"
   }
 }

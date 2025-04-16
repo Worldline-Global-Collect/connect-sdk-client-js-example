@@ -1,6 +1,6 @@
 {
   "name": "connect-sdk-client-js-example-lit",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "",
   "private": true,
   "main": "index.html",
@@ -16,35 +16,35 @@
   "customElements": "custom-elements.json",
   "web-types": "custom-elements.json",
   "dependencies": {
-    "@floating-ui/dom": "^1.6.3",
-    "@lit-labs/motion": "^1.0.7",
-    "@lit/context": "^1.1.0",
-    "@lit/task": "^1.0.0",
-    "@tailwindcss/forms": "^0.5.7",
-    "@vaadin/router": "^1.7.5",
-    "connect-sdk-client-js": "^6.0.4",
-    "lit": "^3.1.2",
-    "tailwind-merge": "^2.2.1"
+    "@floating-ui/dom": "^1.6.13",
+    "@lit-labs/motion": "^1.0.8",
+    "@lit/context": "^1.1.4",
+    "@lit/task": "^1.0.2",
+    "@tailwindcss/forms": "^0.5.10",
+    "@vaadin/router": "^2.0.0",
+    "connect-sdk-client-js": "^6.0.5",
+    "lit": "^3.2.1",
+    "tailwind-merge": "^3.1.0"
   },
   "devDependencies": {
-    "@custom-elements-manifest/analyzer": "^0.10.3",
-    "@types/applepayjs": "^14.0.8",
-    "@types/dom-view-transitions": "^1.0.4",
+    "@custom-elements-manifest/analyzer": "^0.10.4",
+    "@types/applepayjs": "^14.0.9",
+    "@types/dom-view-transitions": "^1.0.6",
     "@types/googlepay": "^0.7.6",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
-    "autoprefixer": "^10.4.18",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "postcss": "^8.4.35",
-    "prettier": "^3.2.5",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
     "tailwindcss": "^3.4.10",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.8",
-    "vite-tsconfig-paths": "^4.3.2"
+    "typescript": "^5.8.2",
+    "vite": "^6.2.4",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "volta": {
-    "node": "20.11.1",
-    "npm": "10.5.0"
+    "node": "23.11.0",
+    "npm": "11.2.0"
   }
 }

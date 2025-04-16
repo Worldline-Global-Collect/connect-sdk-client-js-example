@@ -51,5 +51,5 @@ npm start
 |   -- types.ts - shared types
 |-- tsconfig.json - TypeScript configuration file
 |-- index.html - html page as start page
-|-- webpack.config.js - the webpack config file
+|-- webpack.config.ts - the webpack config file
 ```

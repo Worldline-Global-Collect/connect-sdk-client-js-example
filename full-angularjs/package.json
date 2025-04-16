@@ -6,25 +6,25 @@
   "main": "index.html",
   "scripts": {
     "start": "concurrent \"npm run watch\" \"npm run browsersync\" ",
-    "build:sass": "node-sass -o ./ --include-path node_modules/bootstrap-sass/assets/stylesheets/  app/",
+    "build:sass": "sass --load-path=node_modules/bootstrap-sass/assets/stylesheets app",
     "postinstall": "npm run build:sass",
     "browsersync": "browser-sync --server --port 3000 --watch --files='./**/*.{html,htm,css,js}' --ignore 'node_modules'",
-    "watch:sass": "npm run build:sass && node-sass -o ./ -w app/ --include-path node_modules/bootstrap-sass/assets/stylesheets/",
+    "watch:sass": "npm run build:sass && sass --load-path=node_modules/bootstrap-sass/assets/stylesheets app -w",
     "watch": "npm run watch:sass"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.7.9",
-    "angular-route": "^1.7.8",
-    "angular-ui-bootstrap": "^2.5.0",
-    "angular-ui-mask": "^1.8.6",
+    "angular": "^1.8.3",
+    "angular-route": "^1.8.3",
+    "angular-ui-bootstrap": "^2.5.6",
+    "angular-ui-mask": "^1.8.7",
     "bootstrap-sass": "3.4.1",
     "connect-sdk-client-js": "^4.0.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.11",
-    "concurrently": "^2.2.0",
-    "node-sass": "^4.14.1"
+    "browser-sync": "^3.0.4",
+    "concurrently": "^3.6.1",
+    "sass": "^1.86.3"
   }
 }
