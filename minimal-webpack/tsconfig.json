@@ -23,8 +23,10 @@
 
   /* webpack uses ts-node to parse webpack.config.ts, see https://webpack.js.org/configuration/configuration-languages/#typescript */
   "ts-node": {
+    "esm": true,
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "ESNext",
+      "target": "ESNext"
     }
   }
 }

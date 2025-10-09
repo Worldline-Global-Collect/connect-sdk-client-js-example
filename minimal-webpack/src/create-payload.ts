@@ -18,7 +18,7 @@ export async function createPayload(props: CreatePayloadProps) {
   paymentRequest.setPaymentProduct(paymentProduct);
   paymentRequest.setValue("cardNumber", cardNumber);
   paymentRequest.setValue("cvv", "123");
-  paymentRequest.setValue("expiryDate", "04/25");
+  paymentRequest.setValue("expiryDate", "06/29");
   paymentRequest.setValue("cardholderName", "John Doe");
 
   // validate payment request
