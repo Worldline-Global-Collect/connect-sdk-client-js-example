@@ -2082,7 +2082,7 @@
               "type": {
                 "text": "string"
               },
-              "default": "'cancel'",
+              "default": "'Cancel'",
               "attribute": "cancel-text"
             },
             {
@@ -2185,7 +2185,7 @@
               "type": {
                 "text": "string"
               },
-              "default": "'cancel'",
+              "default": "'Cancel'",
               "fieldName": "cancelText"
             },
             {

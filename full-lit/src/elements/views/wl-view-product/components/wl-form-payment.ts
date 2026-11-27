@@ -13,7 +13,7 @@ import { TailwindElement } from '@/mixins';
 import { renderPaymentProductFields } from '@/elements';
 import { SessionController } from '@/controllers';
 
-import rememberCheckboxData from '../data/checkbox-remember.json' assert { type: 'json' };
+import rememberCheckboxData from '../data/checkbox-remember.json';
 import { RouteViewComponentName } from '@/routes';
 
 @customElement('wl-form-payment')

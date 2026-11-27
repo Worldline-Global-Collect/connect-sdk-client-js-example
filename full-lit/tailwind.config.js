@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{ts,html,js,css}'],
-  plugins: [require('@tailwindcss/forms')],
   theme: {
     extend: {
       animation: {

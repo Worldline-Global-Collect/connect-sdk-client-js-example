@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [tsconfigPaths()],
   server: { port: 3001, open: true },
+  resolve: {
+    tsconfigPaths: true
+  },
+  plugins: [tailwindcss()],
 });

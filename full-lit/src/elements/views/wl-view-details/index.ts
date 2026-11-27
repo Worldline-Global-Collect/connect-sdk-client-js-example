@@ -8,9 +8,9 @@ import { map } from 'lit/directives/map.js';
 import { Task, TaskStatus } from '@lit/task';
 
 // data for rendering the fields
-import sessionDetailsFields from './data/session-details-fields.json' assert { type: 'json' };
-import paymentContextFields from './data/payment-context-fields.json' assert { type: 'json' };
-import paymentDetailsCheckboxes from './data/payment-details-checkboxes.json' assert { type: 'json' };
+import sessionDetailsFields from './data/session-details-fields.json';
+import paymentContextFields from './data/payment-context-fields.json';
+import paymentDetailsCheckboxes from './data/payment-details-checkboxes.json';
 
 import { TailwindElement } from '@/mixins';
 import { WlInput } from '@/elements';

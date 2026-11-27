@@ -30,7 +30,7 @@ export class WlDialogConfirm extends TailwindElement {
     delegatesFocus: true,
   };
 
-  @property({ type: String, attribute: 'cancel-text' }) cancelText = 'cancel';
+  @property({ type: String, attribute: 'cancel-text' }) cancelText = 'Cancel';
   @property({ type: String, attribute: 'submit-label' }) submitLabel = 'Submit';
   @property({ type: String, attribute: 'dialog-title' }) dialogTitle?: string;
   @property({ type: String }) size: DialogSize = 'normal';

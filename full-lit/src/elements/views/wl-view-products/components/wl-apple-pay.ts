@@ -68,6 +68,7 @@ export class WlApplePay extends TailwindElement {
     task: async () => {
       const session = this.sessionController.session!;
       const paymentProduct = session.getPaymentRequest().getPaymentProduct()!;
+      const isRecurring = this.sessionController.paymentDetails?.isRecurring;
       const { networks: supportedNetworks } =
         paymentProduct.paymentProduct302SpecificData!;
 
@@ -76,10 +77,39 @@ export class WlApplePay extends TailwindElement {
         Pick<PaymentProductSpecificInputs, 'applePay'>
       >;
 
-      const result = await session.createApplePayPayment(
+      const result = isRecurring ?
+        /**
+         * Payment is recurring, create a recurring Apple Pay payment.
+         * This example has monthly recurring payments with no end date, these values can be adjusted to your wishes.
+         * Please refer to Apple Pay's documentation on what values can be supplied in a `ApplePayRecurringPaymentRequest`.
+         * @see - https://developer.apple.com/documentation/applepayontheweb/applepayrecurringpaymentrequest
+         */
+        await session.createApplePayRecurringPayment(
         this.sessionController.paymentDetails!,
         { ...applePay, acquirerCountry: paymentProduct.acquirerCountry },
-        supportedNetworks,
+        {
+            paymentDescription: "This is a test payment",
+            regularBilling: {
+                paymentTiming: "recurring",
+                label: "This recurring payment is for testing",
+                amount: (this.sessionController.paymentDetails?.totalAmount ? this.sessionController.paymentDetails?.totalAmount / 100 : 100).toString(),
+                recurringPaymentStartDate: new Date(),
+                recurringPaymentIntervalUnit: "month",
+                recurringPaymentIntervalCount: 1,
+
+            } as ApplePayJS.ApplePayLineItem,
+            managementURL: "https://example.com",
+
+        } as ApplePayJS.ApplePayRecurringPaymentRequest,
+        supportedNetworks
+      ) :
+      /**
+       * Payment is not recurring, create a regular Apple Pay payment.
+       */
+      await session.createApplePayPayment(
+        this.sessionController.paymentDetails!,
+        { ...applePay, acquirerCountry: paymentProduct.acquirerCountry },
+        supportedNetworks
       );
 
       return this.sessionController.encryptPaymentRequest({
